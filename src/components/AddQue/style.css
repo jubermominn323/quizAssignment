@@ -13,6 +13,7 @@ input{
     width: 100px;
     color: black;
 } */
-.container{
-    border: 1px solid red
+
+.options{
+    padding: 20px;
 }
