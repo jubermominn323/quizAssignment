@@ -1,6 +1,7 @@
 import React from "react"
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import Navbar from "../navigation/navbar";
 import "./style.css"
 
 const Ques = () =>{
@@ -58,6 +59,8 @@ const Ques = () =>{
 
 
     return(
+        <div className="bar">
+            <Navbar />
         <div className="container">
 
         <input type="text" id="abc" onChange={(e)=>addQues(e)} placeholder="Add question here" />
@@ -74,6 +77,7 @@ const Ques = () =>{
         <button className="btn"  onClick={()=>addData()}>Submit</button>
         <button className="btn" style={{float:"right"}} onClick={()=>newQue()} >Add Next Question</button>
         
+    </div>
     </div>
     )
     

@@ -1,19 +1,11 @@
-/* .addingQues{
-    align-items: center;
-    padding: 10px;
-    border: 1px solid red;
-    margin:auto 40px;
-}
-.addingQues button{
-    border-radius: 5px;
-}
-
-input{
-    height: 40px;
-    width: 100px;
-    color: black;
-} */
 
 .options{
-    padding: 20px;
+    padding: 10px;
+}
+
+.conainer{
+    margin: 40px auto;
+}
+.bar{
+    margin-bottom: 10px;
 }
