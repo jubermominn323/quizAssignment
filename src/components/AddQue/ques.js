@@ -1,9 +1,12 @@
 import React from "react"
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 import "./style.css"
 
 const Ques = () =>{
-    
+
     const options = new Array(4)
+    var data = []
     const questions = {
         "text":"",
         options
@@ -16,7 +19,10 @@ const Ques = () =>{
         //console.log(e.target.value)
         const tempArray = options
         tempArray[e.target.id] = e.target.value
-        questions.options[e.target.id] = e.target.value
+        if(e.target.value !== ""){
+            questions.options[e.target.id] = e.target.value 
+        }
+        // questions.options[e.target.id] = e.target.value
     }
     const newQue = () =>{
         // var data = {...questions}
@@ -27,12 +33,27 @@ const Ques = () =>{
         }
     }
     const addData = () =>{
-        fetch("",{
+        
+        data.push(questions)
+        //console.log(questions)
+        if(questions.text.length !== 0){
+            fetch("http://localhost:2021/getQue",{
             method: "post",
+            headers : {
+                "Content-Type":"application/json",
+                'Accept': 'application/json'
+              },
             body: JSON.stringify({
-                questions
+                questions:data
             })
-        }, console.log("success"))
+
+        }, console.log(questions))
+        }
+        else{
+            toast.error("Fill all the inputs")
+        }
+        
+
     }
 
 
@@ -49,8 +70,10 @@ const Ques = () =>{
                     )
             })
         }
+        <ToastContainer />
         <button className="btn"  onClick={()=>addData()}>Submit</button>
         <button className="btn" style={{float:"right"}} onClick={()=>newQue()} >Add Next Question</button>
+        
     </div>
     )
     
