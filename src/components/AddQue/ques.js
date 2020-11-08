@@ -38,7 +38,7 @@ const Ques = () =>{
         data.push(questions)
         //console.log(questions)
         if(questions.text.length !== 0){
-            fetch("http://localhost:2021/getQue",{
+            fetch("",{
             method: "post",
             headers : {
                 "Content-Type":"application/json",

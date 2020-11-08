@@ -4,7 +4,7 @@ import './style.css'
 const DisplayQues = () =>{
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("http://localhost:2021/sendData",{
+        fetch("",{
             headers: {
                 "Authorization":"Bearer"
             }
